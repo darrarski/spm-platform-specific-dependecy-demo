@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		31B06DC426793D7E00A28C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B06DC326793D7E00A28C7B /* Assets.xcassets */; };
 		31B06DD526793E4600A28C7B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B06DD426793E4600A28C7B /* App.swift */; };
 		31B06DD926793E4700A28C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B06DD826793E4700A28C7B /* Assets.xcassets */; };
+		31F3044B267942C5006B4824 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 31F3044A267942C5006B4824 /* AppFeature */; };
+		31F3044D267942CA006B4824 /* AppFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 31F3044C267942CA006B4824 /* AppFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F3044B267942C5006B4824 /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31F3044D267942CA006B4824 /* AppFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +52,7 @@
 				31B06DBE26793D7D00A28C7B /* DemoApp-iOS */,
 				31B06DD326793E4600A28C7B /* DemoApp-tvOS */,
 				31B06DBD26793D7D00A28C7B /* Products */,
+				31F30449267942C5006B4824 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +85,13 @@
 			path = "DemoApp-tvOS";
 			sourceTree = "<group>";
 		};
+		31F30449267942C5006B4824 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +108,9 @@
 			dependencies = (
 			);
 			name = "DemoApp-iOS";
+			packageProductDependencies = (
+				31F3044A267942C5006B4824 /* AppFeature */,
+			);
 			productName = "DemoApp-iOS";
 			productReference = 31B06DBC26793D7D00A28C7B /* DemoApp-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +128,9 @@
 			dependencies = (
 			);
 			name = "DemoApp-tvOS";
+			packageProductDependencies = (
+				31F3044C267942CA006B4824 /* AppFeature */,
+			);
 			productName = "DemoApp-tvOS";
 			productReference = 31B06DD226793E4600A28C7B /* DemoApp-tvOS.app */;
 			productType = "com.apple.product-type.application";
@@ -134,7 +152,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 31B06DB726793D7D00A28C7B /* Build configuration list for PBXProject "Demo" */;
+			buildConfigurationList = 31B06DB726793D7D00A28C7B /* Build configuration list for PBXProject "DemoApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -397,7 +415,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		31B06DB726793D7D00A28C7B /* Build configuration list for PBXProject "Demo" */ = {
+		31B06DB726793D7D00A28C7B /* Build configuration list for PBXProject "DemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31B06DC926793D7E00A28C7B /* Debug */,
@@ -425,6 +443,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		31F3044A267942C5006B4824 /* AppFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFeature;
+		};
+		31F3044C267942CA006B4824 /* AppFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 31B06DB426793D7D00A28C7B /* Project object */;
 }
