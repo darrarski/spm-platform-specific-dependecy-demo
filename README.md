@@ -1,7 +1,11 @@
-# Demo: Multiplatform Swift Package with platform-specific dependency
+# [Demo] Multi-platform Swift Package with platform-specific dependency
 
 ![swift 5.4](https://img.shields.io/badge/swift-5.4-orange.svg)
 ![platform iOS & tvOS](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS-blue)
+
+This is an example project for [Swift Forums thread](https://forums.swift.org/t/adding-platform-specific-dependency-to-multi-platform-swift-package/49645).
+
+## Description
 
 This project contains Swift Package that supports both **iOS** and **tvOS** platforms (see [Package.swift](Package.swift) for details).
 
