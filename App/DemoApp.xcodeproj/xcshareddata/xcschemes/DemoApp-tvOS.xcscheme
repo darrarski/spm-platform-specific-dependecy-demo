@@ -17,7 +17,7 @@
                BlueprintIdentifier = "31B06DD126793E4600A28C7B"
                BuildableName = "DemoApp-tvOS.app"
                BlueprintName = "DemoApp-tvOS"
-               ReferencedContainer = "container:Demo.xcodeproj">
+               ReferencedContainer = "container:DemoApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "31B06DD126793E4600A28C7B"
             BuildableName = "DemoApp-tvOS.app"
             BlueprintName = "DemoApp-tvOS"
-            ReferencedContainer = "container:Demo.xcodeproj">
+            ReferencedContainer = "container:DemoApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "31B06DD126793E4600A28C7B"
             BuildableName = "DemoApp-tvOS.app"
             BlueprintName = "DemoApp-tvOS"
-            ReferencedContainer = "container:Demo.xcodeproj">
+            ReferencedContainer = "container:DemoApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
