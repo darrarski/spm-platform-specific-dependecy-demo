@@ -5,19 +5,32 @@
 
 This is an example project for [Swift Forums thread](https://forums.swift.org/t/adding-platform-specific-dependency-to-multi-platform-swift-package/49645).
 
+## Project structure
+
+`Demo.xcworkspace` contains a Swift Package with library products and an Xcode project with **iOS** and **tvOS** app targets.
+
+```
+Demo (Xcode Workspace)
+ ├─ Demo (Swift Package)
+ |   └─ AppFeature (Swift Library)
+ └─ DemoApp (Xcode Project)
+     ├─ DemoApp-iOS (iOS application)
+     └─ DemoApp-tvOS (tvOS application)
+```
+
 ## Description
 
-This project contains Swift Package that supports both **iOS** and **tvOS** platforms (see [Package.swift](Package.swift) for details).
+The Swift Package supports both **iOS** and **tvOS** platforms (see [Package.swift](Package.swift) for details).
 
-There is a single library product built from a single target. This target depends on `FirebaseAnalytics`. 
+`AppFeature` library product (built from `AppFeature` target) depends on `FirebaseAnalytics`. 
 
-`FirebaseAnalytics` is used here as an example of dependency that only supports a single platform - **iOS** in this case.
+`FirebaseAnalytics` is used here as an example of a dependency that only supports a single platform - **iOS** in this case.
 
 Despite adding `condition` parameter to the target's dependecy:
 
 ```swift
 .target(
-  name: "Demo",
+  name: "AppFeature",
   dependencies: [
     .product(
       name: "FirebaseAnalytics",
