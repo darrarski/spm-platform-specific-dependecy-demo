@@ -10,8 +10,8 @@ let package = Package(
   ],
   products: [
     .library(
-      name: "Demo",
-      targets: ["Demo"]
+      name: "AppFeature",
+      targets: ["AppFeature"]
     ),
   ],
   dependencies: [
@@ -23,7 +23,7 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "Demo",
+      name: "AppFeature",
       dependencies: [
         .product(
           name: "FirebaseAnalytics",
@@ -33,9 +33,9 @@ let package = Package(
       ]
     ),
     .testTarget(
-      name: "DemoTests",
+      name: "AppFeatureTests",
       dependencies: [
-        .target(name: "Demo")
+        .target(name: "AppFeature"),
       ]
     ),
   ]
