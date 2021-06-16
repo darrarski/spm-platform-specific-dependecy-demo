@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3121422E267A41FC005AECDB /* Analytics-iOS in Frameworks */ = {isa = PBXBuildFile; productRef = 3121422D267A41FC005AECDB /* Analytics-iOS */; };
+		31214230267A4200005AECDB /* Analytics-tvOS in Frameworks */ = {isa = PBXBuildFile; productRef = 3121422F267A4200005AECDB /* Analytics-tvOS */; };
 		31B06DC026793D7D00A28C7B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B06DBF26793D7D00A28C7B /* App.swift */; };
 		31B06DC426793D7E00A28C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B06DC326793D7E00A28C7B /* Assets.xcassets */; };
 		31B06DD526793E4600A28C7B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B06DD426793E4600A28C7B /* App.swift */; };
@@ -32,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F3044B267942C5006B4824 /* AppFeature in Frameworks */,
+				3121422E267A41FC005AECDB /* Analytics-iOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F3044D267942CA006B4824 /* AppFeature in Frameworks */,
+				31214230267A4200005AECDB /* Analytics-tvOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +114,7 @@
 			name = "DemoApp-iOS";
 			packageProductDependencies = (
 				31F3044A267942C5006B4824 /* AppFeature */,
+				3121422D267A41FC005AECDB /* Analytics-iOS */,
 			);
 			productName = "DemoApp-iOS";
 			productReference = 31B06DBC26793D7D00A28C7B /* DemoApp-iOS.app */;
@@ -130,6 +135,7 @@
 			name = "DemoApp-tvOS";
 			packageProductDependencies = (
 				31F3044C267942CA006B4824 /* AppFeature */,
+				3121422F267A4200005AECDB /* Analytics-tvOS */,
 			);
 			productName = "DemoApp-tvOS";
 			productReference = 31B06DD226793E4600A28C7B /* DemoApp-tvOS.app */;
@@ -445,6 +451,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3121422D267A41FC005AECDB /* Analytics-iOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Analytics-iOS";
+		};
+		3121422F267A4200005AECDB /* Analytics-tvOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Analytics-tvOS";
+		};
 		31F3044A267942C5006B4824 /* AppFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppFeature;

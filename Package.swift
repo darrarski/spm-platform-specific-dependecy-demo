@@ -9,10 +9,9 @@ let package = Package(
     .tvOS(.v14),
   ],
   products: [
-    .library(
-      name: "AppFeature",
-      targets: ["AppFeature"]
-    ),
+    .library(name: "AppFeature", targets: ["AppFeature"]),
+    .library(name: "Analytics-iOS", targets: ["Analytics-iOS"]),
+    .library(name: "Analytics-tvOS", targets: ["Analytics-tvOS"]),
   ],
   dependencies: [
     .package(
@@ -25,17 +24,32 @@ let package = Package(
     .target(
       name: "AppFeature",
       dependencies: [
-        .product(
-          name: "FirebaseAnalytics",
-          package: "Firebase",
-          condition: .when(platforms: [.iOS])
-        ),
+        .target(name: "Analytics"),
       ]
     ),
     .testTarget(
       name: "AppFeatureTests",
       dependencies: [
         .target(name: "AppFeature"),
+      ]
+    ),
+    .target(
+      name: "Analytics"
+    ),
+    .target(
+      name: "Analytics-iOS",
+      dependencies: [
+        .target(name: "Analytics"),
+        .product(
+          name: "FirebaseAnalytics",
+          package: "Firebase"
+        ),
+      ]
+    ),
+    .target(
+      name: "Analytics-tvOS",
+      dependencies: [
+        .target(name: "Analytics"),
       ]
     ),
   ]
