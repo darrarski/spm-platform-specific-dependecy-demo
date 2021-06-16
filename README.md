@@ -3,7 +3,7 @@
 ![swift 5.4](https://img.shields.io/badge/swift-5.4-orange.svg)
 ![platform iOS & tvOS](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS-blue)
 
-This is an example project for [Swift Forums thread](https://forums.swift.org/t/adding-platform-specific-dependency-to-multi-platform-swift-package/49645).
+This branch contains a workaround for Swift Package Manager issue, described on the main branch and in the [Swift Forums thread](https://forums.swift.org/t/adding-platform-specific-dependency-to-multi-platform-swift-package/49645).
 
 ## Project structure
 
@@ -12,7 +12,9 @@ This is an example project for [Swift Forums thread](https://forums.swift.org/t/
 ```
 Demo (Xcode Workspace)
  ├─ Demo (Swift Package)
- |   └─ AppFeature (Swift Library)
+ |   ├─ AppFeature (Swift Library)
+ |   ├─ Analytics-iOS (Swift Library)
+ |   └─ Analytics-tvOS (Swift Library)
  └─ DemoApp (Xcode Project)
      ├─ DemoApp-iOS (iOS application)
      └─ DemoApp-tvOS (tvOS application)
@@ -22,27 +24,8 @@ Demo (Xcode Workspace)
 
 The Swift Package supports both **iOS** and **tvOS** platforms (see [Package.swift](Package.swift) for details).
 
-`AppFeature` library product (built from `AppFeature` target) depends on `FirebaseAnalytics`. 
+`AppFeature` target depends on an "abstract" `Analytics` target, which defines a common, platform-independent interface for analytics. There are two platform-specific libraries that implement this interface - `Analytics-iOS` and `Analytics-tvOS`. The first one depends on `FirebaseAnalytics` and the second contains an empty implementation.
 
 `FirebaseAnalytics` is used here as an example of a dependency that only supports a single platform - **iOS** in this case.
 
-Despite adding `condition` parameter to the target's dependecy:
-
-```swift
-.target(
-  name: "AppFeature",
-  dependencies: [
-    .product(
-      name: "FirebaseAnalytics",
-      package: "Firebase",
-      condition: .when(platforms: [.iOS])
-    ),
-  ]
-),
-```
-
-The library product can't be built for **tvOS** platform, due to an error:
-
-> [...]/FirebaseAnalytics.xcframework:1:1: While building for tvOS Simulator, no library for this platform was found in '[...]/FirebaseAnalytics.xcframework'.
-
-The library builds without any issue for **iOS** platform.
+Thanks to dependency inversion (making the `AppFeature` depends on abstract `Analytics` target and not concrete implementation target) it's possible to build the app for **iOS** and **tvOS** platform.
